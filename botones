@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Juego</title>
+  <style>
+    #upButton, #downButton, #leftButton, #rightButton {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0,0,0,0.5);
+    }
+    #upButton { top: 10%; left: 50%; }
+    #downButton { top: 30%; left: 50%; }
+    #leftButton { top: 20%; left: 40%; }
+    #rightButton { top: 20%; left: 60%; }
+  </style>
+</head>
+<body>
+  <div id="upButton">UP</div>
+  <div id="downButton">DOWN</div>
+  <div id="leftButton">LEFT</div>
+  <div id="rightButton">RIGHT</div>
+
+  <script>
+    document.getElementById('upButton').addEventListener('touchstart', function() {
+    });
+    document.getElementById('downButton').addEventListener('touchstart', function() {
+    });
+    document.getElementById('leftButton').addEventListener('touchstart', function() {
+    });
+    document.getElementById('rightButton').addEventListener('touchstart', function() {
+    });
+  </script>
+</body>
+</html>
