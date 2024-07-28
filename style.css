@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(img/Summer7.png)
+}
+
+#question-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+#question {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#choices button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#choices button.correct {
+    background-color: green;
+    color: white;
+}
+
+#choices button.incorrect {
+    background-color: red;
+    color: white;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#score {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+a.button {
+    background-color: #16257e; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 15px 32px; /* Algo de padding */
+    text-align: center; /* Centrar el texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Alinear el elemento */
+    font-size: 16px; /* Aumentar tamaño de fuente */
+    margin: 20px 0; /* Margen superior e inferior */
+    cursor: pointer; /* Icono de puntero/mano */
+    border-radius: 12px; /* Bordes redondeados */
+    transition-duration: 0.4s; /* Efecto de transición */
+}
+
+a.button:hover {
+    background-color: white; /* Fondo blanco al pasar el cursor */
+    color: black; /* Texto negro al pasar el cursor */
+    border: 2px solid #4CAF50; /* Borde verde al pasar el cursor */
+}
