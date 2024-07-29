@@ -1,8 +1,8 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = 1690
-canvas.height = 810
+canvas.width = 1024
+canvas.height = 576
 
 const collisionsMap = []
 for (let i = 0; i < collisions.length; i += 70) {
@@ -80,7 +80,7 @@ charactersMap.forEach((row, i) => {
           },
           scale: 3,
           animate: true,
-          dialogue: ['...', 'Holaaa, mi nombre es Angelo, parece que eres nuevo aqui, en esta isla chiquita tenemos un tema muy importante', '"El respeto a la institucionalidad democratica"'
+          dialogue: ['...', 'Holaaa, mi nombre es Angelo, parece que eres nuevo aqui, en esta isla tenemos un tema muy importante', '"El respeto a la institucionalidad democratica"'
             ,'Si sabes que es el respeto a la institucionalidad democratica?', 
             'Si no sabes, probablemente alguno de los que estan exponiendo lo dijo, pero si no, se refiere a la aceptacion y cumplimiento de las normas, leyes e instituciones que rigen un sistema democratico.',
             'Es esencial para mantener la paz y el orden en nuestra comunidad. Sin el, las decisiones se toman al azar y la voz de la gente se ignora.',
