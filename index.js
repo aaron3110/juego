@@ -1,8 +1,8 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = 1024
-canvas.height = 412
+canvas.width = 1690
+canvas.height = 810
 
 const collisionsMap = []
 for (let i = 0; i < collisions.length; i += 70) {
@@ -352,6 +352,7 @@ function animate() {
         movable.position.x -= 3
       })
   }
+  
 }
 // animate()
 
@@ -425,6 +426,7 @@ window.addEventListener('keyup', (e) => {
       keys.d.pressed = false
       break
   }
+  
 })
 
 let clicked = false

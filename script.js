@@ -1,31 +1,45 @@
 const questions = [
     {
-        question: "¿Qué principio fundamental garantiza la igualdad de todos los ciudadanos ante la ley?",
-        options: ["Estado de derecho", "Monarquía", "Dictadura", "Anarquía"],
-        correct: "Estado de derecho"
+        "question": "¿Qué principio fundamental garantiza la igualdad de todos los ciudadanos ante la ley en Costa Rica?",
+        "options": ["Estado de derecho", "Monarquía", "Dictadura", "Anarquía"],
+        "correct": "Estado de derecho"
     },
     {
-        question: "¿Cuál es el órgano encargado de crear y modificar las leyes en una democracia?",
-        options: ["El Congreso", "El Poder Ejecutivo", "El Poder Judicial", "La Policía"],
-        correct: "El Congreso"
+        "question": "¿Cuál es el organismo encargado de crear y modificar las leyes en Costa Rica?",
+        "options": ["La Asamblea Legislativa", "El Poder Ejecutivo", "El Poder Judicial", "La Policía"],
+        "correct": "La Asamblea Legislativa"
     },
     {
-        question: "¿Qué derecho fundamental permite a los ciudadanos elegir a sus representantes?",
-        options: ["Sufragio", "Libertad de expresión", "Derecho a la privacidad", "Derecho a la educación"],
-        correct: "Sufragio"
+        "question": "¿Qué derecho fundamental permite a los ciudadanos costarricenses elegir a sus representantes?",
+        "options": ["Sufragio", "Libertad de expresión", "Derecho a la privacidad", "Derecho a la educación"],
+        "correct": "Sufragio"
     },
     {
-        question: "¿Cuál es la función principal del Poder Judicial en una democracia?",
-        options: ["Interpretar y aplicar las leyes", "Crear leyes", "Ejecutar políticas públicas", "Recaudar impuestos"],
-        correct: "Interpretar y aplicar las leyes"
+        "question": "¿Cuál es la función principal del Poder Judicial en Costa Rica?",
+        "options": ["Interpretar y aplicar las leyes", "Crear leyes", "Ejecutar políticas públicas", "Recaudar impuestos"],
+        "correct": "Interpretar y aplicar las leyes"
     },
     {
-        question: "¿Qué mecanismo permite a los ciudadanos participar directamente en la toma de decisiones políticas?",
-        options: ["Referéndum", "Decreto", "Ley marcial", "Censura"],
-        correct: "Referéndum"
+        "question": "¿Qué mecanismo permite a los ciudadanos costarricenses participar directamente en la toma de decisiones políticas?",
+        "options": ["Referéndum", "Decreto", "Ley marcial", "Censura"],
+        "correct": "Referéndum"
+    },
+    {
+        "question": "¿Qué institución es responsable de organizar las elecciones en Costa Rica?",
+        "options": ["El Tribunal Supremo de Elecciones", "El Poder Ejecutivo", "La Asamblea Legislativa", "El Ministerio de Justicia"],
+        "correct": "El Tribunal Supremo de Elecciones"
+    },
+    {
+        "question": "¿Cuál es el papel del Defensor de los Habitantes en Costa Rica?",
+        "options": ["Proteger los derechos y libertades de los ciudadanos", "Crear leyes", "Ejecutar políticas públicas", "Recaudar impuestos"],
+        "correct": "Proteger los derechos y libertades de los ciudadanos"
+    },
+    {
+        "question": "¿Qué documento fundamental establece los derechos y deberes de los ciudadanos en Costa Rica?",
+        "options": ["La Constitución Política", "El Código Penal", "La Ley de Tránsito", "El Reglamento Interno"],
+        "correct": "La Constitución Política"
     }
-];
-
+]
 let shuffledQuestions = [];
 let questionsAnswered = 0;
 const totalQuestions = questions.length;
@@ -38,8 +52,10 @@ const questionElement = document.getElementById("question");
 const choicesContainer = document.getElementById("choices");
 const resultContainer = document.getElementById("result");
 const scoreContainer = document.getElementById("score");
-const timerElement = document.getElementById("timer");
+const timerElement = document.getElementById("time");
 const questionContainer = document.getElementById("question-container");
+const startScreen = document.getElementById("start-screen");
+const startQuizButton = document.getElementById("start-quiz-button");
 
 const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -121,7 +137,7 @@ const handleAnswer = (choice, button) => {
         resultContainer.textContent = `Tiempo agotado. Suerte en la próxima :D`;
     }
 
-    scoreContainer.textContent = `Puntuación: ${score}`;
+    scoreContainer.textContent = `Puntos: ${score}`;
     questionsAnswered++;
     if (questionsAnswered >= totalQuestions) {
         setTimeout(displayFinalScore, 2000); // Wait 2 seconds before showing the final score
@@ -133,8 +149,12 @@ const handleAnswer = (choice, button) => {
 const displayFinalScore = () => {
     questionContainer.innerHTML = `
         <h2>Haz terminadoo :D</h2>
-        <p>Tu puntuación final es: ${score}</p>
+        <p>Tus puntos finales fueron: ${score}</p>
     `;
 };
 
-displayQuestion(); // Display the first question when the page loads
+startQuizButton.addEventListener("click", () => {
+    startScreen.style.display = "none";
+    questionContainer.style.display = "block";
+    displayQuestion(); // Display the first question when the quiz starts
+});
